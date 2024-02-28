@@ -1,0 +1,87 @@
+{
+    "recipes": [
+      {
+        "id": "1",
+        "title": "Classic Spaghetti Carbonara",
+        "image": "./carbonara.jpg",
+        "ingredients": [
+          "100g pancetta",
+          "3 large eggs",
+          "350g spaghetti",
+          "2 cloves of garlic",
+          "50g pecorino cheese"
+        ],
+        "steps": [
+          "Cook the pasta.",
+          "Fry the pancetta with garlic.",
+          "Mix eggs and cheese, then combine with pasta.",
+          "Season and serve."
+        ],
+        "time": "20 minutes",
+        "difficulty": "Medium"
+      },
+      {
+        "id": "2",
+        "title": "Simple Tomato Bruschetta",
+        "image": "./bruschetta.jpg",
+        "ingredients": [
+          "6 tomatoes",
+          "Handful of basil",
+          "1 loaf ciabatta bread",
+          "2 cloves of garlic",
+          "Olive oil"
+        ],
+        "steps": [
+          "Chop tomatoes and basil, and mix.",
+          "Toast slices of ciabatta.",
+          "Rub garlic on toasted ciabatta, then top with tomato mixture.",
+          "Drizzle with olive oil before serving."
+        ],
+        "time": "15 minutes",
+        "difficulty": "Easy"
+      },
+      {
+        "id": "3",
+        "title": "Avocado Toast",
+        "image": "./avocado.jpg",
+        "ingredients": [
+          "2 slices of bread",
+          "1 ripe avocado",
+          "Salt and pepper",
+          "Red pepper flakes",
+          "1 egg (optional)"
+        ],
+        "steps": [
+          "Toast the bread.",
+          "Mash the avocado and spread on the toast.",
+          "Add salt, pepper, and red pepper flakes to taste.",
+          "Top with a poached or fried egg if desired."
+        ],
+        "time": "10 minutes",
+        "difficulty": "Easy"
+      },
+      {
+        "id": "4",
+        "title": "Mango Berry Smoothie",
+        "image": "./smoothie.jpg",
+        "ingredients": [
+          "1 cup mango chunks",
+          "½ cup mixed berries",
+          "1 banana",
+          "1 cup almond milk",
+          "Honey to taste"
+        ],
+        "steps": [
+          "Combine all ingredients in a blender.",
+          "Blend until smooth.",
+          "Adjust sweetness with honey.",
+          "Serve immediately."
+        ],
+        "time": "5 minutes",
+        "difficulty": "Easy"
+      }
+    ]
+  }
+
+  
+  
