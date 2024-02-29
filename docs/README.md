@@ -77,11 +77,11 @@ npx expo start
 
 **Ensure that you're devices are all connected to the same network for this to work!**
 
-![Expo Go Instruction](/docs/ExpoGoIns.png)
+![Expo Go Instruction](./ExpoGoIns.png)
 
 > Run the app on IOS Simulator using XCode on Mac and Android Studio on Windows:
 
-![Android Studio & IOS Instruction](/docs/AndroidIOS.png)
+![Android Studio & IOS Instruction](./AndroidIOS.png)
 
 ## Usage
 
