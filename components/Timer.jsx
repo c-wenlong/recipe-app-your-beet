@@ -8,7 +8,7 @@ const TimerControl = () => {
   const countdownRef = useRef(null);
 
   function handleTimer(value) {
-    if (timer + value > 0) {
+    if (timer + value * 60 > 0) {
       setTimer((timer) => timer + value * 60);
     } else {
       setTimer(0);
@@ -139,12 +139,12 @@ const styles = StyleSheet.create({
   },
   button: {
     width: 50,
-    height: 50,
-    borderRadius: 50 / 2,
+    height: 30,
+    borderRadius: 5,
     backgroundColor: "blue",
     alignItems: "center",
     justifyContent: "center",
-    marginHorizontal: 10,
+    marginHorizontal: 5,
   },
   buttonText: {
     fontSize: 10,

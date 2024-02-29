@@ -10,9 +10,7 @@ function RecipeCard({ recipeId, imgName }) {
   useEffect(() => {
     fetch(`http://localhost:${PORT}/api/recipes/${recipeId}`)
       .then((response) => response.json())
-      .then((data) => {
-        setRecipe(data);
-      })
+      .then((data) => setRecipe(data))
       .catch((error) => console.error(error));
   }, [recipeId]); // Depend on recipeId to refetch if it changes
 
@@ -20,9 +18,7 @@ function RecipeCard({ recipeId, imgName }) {
   const navigation = useNavigation();
 
   function handleOpenRecipe() {
-    console.log("passed recipe: ", recipe);
-    console.log("passed img: ", imgUrl);
-    navigation.navigate("RecipeDetails", {
+    navigation.navigate("Recipe", {
       recipeDetails: recipe,
       imgUrl: imgUrl,
     });

@@ -31,6 +31,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "white",
+    borderWidth: 1,
+    borderColor: "lightgrey",
+    borderRadius: 15,
+    paddingVertical: 5,
+    paddingHorizontal: 10,
+    margin: 5,
   },
   item: {
     flexDirection: "row",
