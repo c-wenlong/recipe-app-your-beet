@@ -1,13 +1,13 @@
-# Project Name
+# RecipeApp
 
-Brief description of your project, including what it does and why it's useful.
+A basic recipe app for a technical assignment by yourbeet.
 
 ## Key Features
 
-- **Feature 1**: View a list of different recipes and a brief description.
-- **Feature 2**: View the details of the recipe, including the full ingredients list and steps to make it.
-- **Feature 3**: Check off boxes of each ingredient/step.
-- **Feature 4**: Manage a countdown timer to keep track of cooking process.
+- **Home Page**: View a list of different recipes and a brief description.
+- **Recipe Details Page**: View the details of the recipe, including the full ingredients list and steps to make it.
+- **Checkboxes**: Check off boxes of each ingredient/step.
+- **Timer**: Manage a countdown timer to keep track of cooking process.
 
 ## Requirements
 
