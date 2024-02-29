@@ -3,7 +3,7 @@
       {
         "id": "1",
         "title": "Classic Spaghetti Carbonara",
-        "image": "./carbonara.jpg",
+        "image": "carbonara.jpg",
         "ingredients": [
           "100g pancetta",
           "3 large eggs",
@@ -23,7 +23,7 @@
       {
         "id": "2",
         "title": "Simple Tomato Bruschetta",
-        "image": "./bruschetta.jpg",
+        "image": "bruschetta.jpg",
         "ingredients": [
           "6 tomatoes",
           "Handful of basil",
@@ -43,7 +43,7 @@
       {
         "id": "3",
         "title": "Avocado Toast",
-        "image": "./avocado.jpg",
+        "image": "avocado.jpg",
         "ingredients": [
           "2 slices of bread",
           "1 ripe avocado",
@@ -63,7 +63,7 @@
       {
         "id": "4",
         "title": "Mango Berry Smoothie",
-        "image": "./smoothie.jpg",
+        "image": "smoothie.jpg",
         "ingredients": [
           "1 cup mango chunks",
           "½ cup mixed berries",

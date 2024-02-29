@@ -1,44 +1,53 @@
 import { React, useEffect, useState } from "react";
 import { View, TouchableOpacity, Image, StyleSheet, Text } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
-function RecipeCard(recipeId) {
-  console.log(recipeId);
+function RecipeCard({ recipeId, imgName }) {
   const [recipe, setRecipe] = useState({});
+  const PORT = process.env.PORT || 3000; // PORT
+  const imgUrl = `http://localhost:${PORT}/images/${imgName}`;
+
   useEffect(() => {
-    fetch(`http://localhost:3000/api/recipes/${recipeId}`)
+    fetch(`http://localhost:${PORT}/api/recipes/${recipeId}`)
       .then((response) => response.json())
-      .then((data) => setRecipe(data))
+      .then((data) => {
+        setRecipe(data);
+      })
       .catch((error) => console.error(error));
   }, [recipeId]); // Depend on recipeId to refetch if it changes
-  /**const handleOpenRecipe = () => {
-    navigation.navigate("recipeDetails", { recipeDetails: recipeDetails });
-  };
-  */
-  console.log(recipe);
+
+  // handles navigation
+  const navigation = useNavigation();
+
+  function handleOpenRecipe() {
+    console.log("passed recipe: ", recipe);
+    console.log("passed img: ", imgUrl);
+    navigation.navigate("RecipeDetails", {
+      recipeDetails: recipe,
+      imgUrl: imgUrl,
+    });
+  }
+
   return (
     // Card view of the brief description of recipes
-    <TouchableOpacity
-      style={styles.container}
-      onPress={() => console.log("You have pressed the recipe!")}
-    >
-      <Image
-        source={
-          recipe.image
-            ? { uri: recipe.image }
-            : require("../assets/default.jpg")
-        }
-        style={styles.image}
-      />
+    <TouchableOpacity style={styles.container} onPress={handleOpenRecipe}>
+      <Image source={{ uri: imgUrl }} style={styles.image} />
       <View style={styles.contentContainer}>
         <Text style={styles.title}>{recipe.title}</Text>
         <Text style={styles.description}>
-          Time: {recipe.time} • Difficulty: {recipe.difficulty}
+          Prep Time: {recipe.time} • Difficulty: {recipe.difficulty}
         </Text>
         {/* Displaying the first few ingredients as a preview */}
         <Text style={styles.description}>
-          Ingredients: {recipe.ingredients}
+          Ingredients:
+          {recipe.ingredients &&
+            recipe.ingredients.slice(0, 2).join(", ") + "..."}
         </Text>
-        {/* Optionally, display a preview of steps or other details */}
+        {/* Displaying the first few steps as a preview */}
+        <Text style={styles.description}>
+          Steps:
+          {recipe.steps && recipe.steps.slice(0, 2).join(", ") + "..."}
+        </Text>
       </View>
     </TouchableOpacity>
   );
@@ -51,11 +60,13 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     borderRadius: 10,
     overflow: "hidden",
-    marginVertical: 8,
+    marginBottom: 16,
     elevation: 3, // for Android shadow
     shadowOpacity: 0.1, // for iOS shadow
     shadowRadius: 5,
     shadowOffset: { width: 0, height: 2 },
+    borderWidth: 1,
+    borderColor: "lightgrey",
   },
   image: {
     width: "100%",
@@ -63,6 +74,8 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     padding: 10,
+    borderTopWidth: 1,
+    borderTopColor: "lightgrey",
   },
   title: {
     fontSize: 18,

@@ -1,18 +1,19 @@
 import { StyleSheet, Text, View } from "react-native";
-import HomePage from "./pages/HomePage";
+import { NavigationContainer } from "@react-navigation/native";
+import StackNavigator from "./pages/StackNavigator";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <HomePage />
-    </View>
+    <NavigationContainer>
+      <StackNavigator />
+    </NavigationContainer>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "blue",
+    backgroundColor: "white",
     padding: 20,
   },
 });

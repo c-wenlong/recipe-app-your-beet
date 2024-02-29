@@ -28,7 +28,13 @@ const HomePage = () => {
       </View>
       <ScrollView style={styles.scrollView}>
         {recipes.map((recipe) => {
-          return <RecipeCard recipe={recipe.id} key={recipe.id} />;
+          return (
+            <RecipeCard
+              recipeId={recipe.id}
+              imgName={recipe.image}
+              key={recipe.id}
+            />
+          );
         })}
       </ScrollView>
     </SafeAreaView>
@@ -40,24 +46,25 @@ const styles = StyleSheet.create({
   safeArea: {
     flex: 1, // Ensures SafeAreaView fills the entire screen
     marginTop: Platform.OS === "ios" ? 0 : StatusBar.currentHeight, // Adjust top margin for Android
-    backgroundColor: "red",
+    backgroundColor: "white",
   },
   header: {
-    // Removed flex: 1 from here
     justifyContent: "centre",
     alignItems: "left",
     flexDirection: "column",
-    backgroundColor: "white",
-    paddingTop: 20, // Example padding, adjust as needed
-    paddingBottom: 20, // Example padding, adjust as needed
+    paddingTop: 20,
+    paddingBottom: 20,
+    borderBottomWidth: 1,
+    borderBottomColor: "lightgrey",
   },
   title: {
     fontSize: 20,
     textAlign: "center",
     color: "blue",
+    paddingLeft: 20,
   },
   scrollView: {
-    flex: 1, // Changed this to 1 to take up the remaining space
-    backgroundColor: "black",
+    flex: 1,
+    backgroundColor: "white",
   },
 });

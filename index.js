@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express(); // CRUD requests using express
-const port = process.env.PORT || 3000; // PORT
+const PORT = process.env.PORT || 3000; // PORT
 
 // Assuming recipes.json is in the same directory as your server
 const recipes = require("./assets/recipes.json");
@@ -20,6 +20,10 @@ app.get("/api/recipes/:id", (req, res) => {
   }
 });
 
-app.listen(port, () => {
-  console.log(`Recipe API running at http://localhost:${port}`);
+app.use("/images", express.static("assets/images"));
+
+app.listen(PORT, () => {
+  console.log(`Recipe API running at http://localhost:${PORT}`);
 });
+
+module.exports = { PORT };
